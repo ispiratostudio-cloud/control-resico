@@ -1,0 +1,40 @@
+name: Publicar sitio
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Revisar enlaces internos
+        run: |
+          for f in *.html; do
+            grep -o 'href="[^"#:]*\.html"' "$f" | sed 's/href="//;s/"//' | while read l; do
+              [ -f "$l" ] || { echo "Enlace roto en $f: $l"; exit 1; }
+            done
+          done
+      - name: Generar sitemap
+        run: |
+          BASE="https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}"
+          { echo '<?xml version="1.0" encoding="UTF-8"?>'; echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+            for f in *.html; do p=$f; [ "$f" = index.html ] && p=""; echo "<url><loc>$BASE/$p</loc></url>"; done
+            echo '</urlset>'; } > sitemap.xml
+          printf "User-agent: *\nAllow: /\nSitemap: $BASE/sitemap.xml\n" > robots.txt
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora RESICO 2026 gratis + Control RESICO en Excel | Freelancers México</title>
+<meta name="description" content="Calcula gratis tu ISR mensual del RESICO 2026 (tasas del 1% al 2.5%) y lleva ingresos, retenciones, IVA y fecha límite del día 17 en un Excel listo para usar.">
+<link rel="canonical" href="./">
+<style>
+:root{--ink:#14213d;--muted:#5b6475;--bg:#f7f5f0;--card:#fff;--brand:#1f3a5f;--accent:#e9a23b;--ok:#2f7d4f;--line:#e3e0d8}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+a{color:var(--brand)}.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{padding:18px 0;border-bottom:1px solid var(--line);background:#fff}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font-weight:800;letter-spacing:-.02em}.logo span{color:var(--accent)}
+nav a{margin-left:16px;font-size:.95rem;text-decoration:none;color:var(--muted)}
+.hero{padding:56px 0 32px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+h1{font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.12;margin:0 0 14px;letter-spacing:-.02em}
+.lead{font-size:1.15rem;color:var(--muted);margin:0 0 22px}
+.btn{display:inline-block;padding:14px 22px;border-radius:10px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-size:1rem}
+.btn-primary{background:var(--brand);color:#fff}.btn-ghost{background:transparent;color:var(--brand);border:2px solid var(--brand);margin-left:8px}
+.btn[aria-disabled=true]{opacity:.55;cursor:not-allowed}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+.calc h2{margin:0 0 4px;font-size:1.25rem}.calc p.small{margin:0 0 16px}
+label{display:block;font-weight:600;font-size:.93rem;margin:12px 0 6px}
+input{width:100%;padding:12px;border:1px solid #cfcabd;border-radius:8px;font-size:1.05rem}
+.res{margin-top:18px;border-top:1px dashed var(--line);padding-top:14px}
+.row{display:flex;justify-content:space-between;padding:4px 0}.row.total{font-weight:800;font-size:1.15rem;color:var(--ok)}
+.small{font-size:.85rem;color:var(--muted)}
+section{padding:40px 0}h2.sec{font-size:1.7rem;margin:0 0 18px;letter-spacing:-.01em}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feat h3{margin:0 0 6px;font-size:1.05rem}.feat p{margin:0;color:var(--muted)}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left}th{background:var(--brand);color:#fff;font-weight:600}
+.price{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+.price .amount{font-size:2.4rem;font-weight:800}
+ul.check{padding:0;list-style:none}ul.check li{padding:4px 0 4px 28px;position:relative}ul.check li:before{content:"✓";position:absolute;left:4px;color:var(--ok);font-weight:800}
+details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-bottom:10px}summary{font-weight:700;cursor:pointer}
+footer{padding:28px 0 40px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+@media (max-width:820px){nav a:not(:last-child){display:none}.hero{grid-template-columns:1fr;padding-top:32px}.grid3{grid-template-columns:1fr}.btn-ghost{margin:10px 0 0}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="logo">Control<span>RESICO</span></div>
+<nav><a href="#calculadora">Calculadora</a><a href="tabla-resico-2026.html">Tabla 2026</a><a href="#precio">Kit completo</a></nav></div></header>
+
+<main class="wrap">
+<div class="hero">
+  <div>
+    <h1>Sabe cada mes cuánto ISR e IVA te toca pagar en RESICO, sin pelearte con el SAT.</h1>
+    <p class="lead">Calculadora gratuita del ISR mensual 2026 y un Excel listo para registrar tus cobros, retenciones de empresas, IVA, fecha límite del día 17 y cuánto dinero apartar.</p>
+    <a class="btn btn-primary" data-link="compra" href="#precio">Obtener el kit</a>
+    <a class="btn btn-ghost" data-link="gratis" href="#calculadora">Descargar calculadora gratis</a>
+    <p class="small" style="margin-top:14px">Para personas físicas en el Régimen Simplificado de Confianza: freelancers, profesionistas, creadores y pequeños negocios.</p>
+  </div>
+
+  <div class="card calc" id="calculadora">
+    <h2>Calculadora ISR RESICO mensual 2026</h2>
+    <p class="small">Tasas del Art. 113-E LISR. Todo se calcula en tu navegador; no guardamos nada.</p>
+    <label for="ing">Ingresos cobrados en el mes, sin IVA (MXN)</label>
+    <input id="ing" type="number" min="0" step="0.01" inputmode="decimal" value="30000">
+    <label for="pm">De esos, cuánto te pagaron empresas (personas morales)</label>
+    <input id="pm" type="number" min="0" step="0.01" inputmode="decimal" value="0">
+    <div class="res" aria-live="polite">
+      <div class="row"><span>Tasa aplicable</span><strong id="r-tasa">–</strong></div>
+      <div class="row"><span>ISR del mes</span><strong id="r-isr">–</strong></div>
+      <div class="row"><span>Menos retención 1.25% de empresas</span><strong id="r-ret">–</strong></div>
+      <div class="row total"><span>ISR a pagar (estimado)</span><span id="r-pagar">–</span></div>
+      <p class="small" id="r-nota"></p>
+    </div>
+  </div>
+</div>
+
+<section>
+  <h2 class="sec">Lo que resuelve el kit</h2>
+  <div class="grid3">
+    <div class="card feat"><h3>Cálculo mensual automático</h3><p>Capturas tus cobros; el archivo aplica la tasa correcta, resta retenciones y te dice cuánto ISR pagar.</p></div>
+    <div class="card feat"><h3>IVA sin adivinar</h3><p>IVA cobrado, IVA que te retienen las empresas e IVA acreditable de tus gastos con CFDI, mes por mes.</p></div>
+    <div class="card feat"><h3>Cuánto apartar y cuándo</h3><p>Monto a reservar para el SAT, fecha límite del día 17 y el dinero que realmente te queda libre.</p></div>
+    <div class="card feat"><h3>Control del tope de $3.5 M</h3><p>Avance contra el límite del RESICO y proyección al cierre del año, con alerta al 80%.</p></div>
+    <div class="card feat"><h3>Estimación anual</h3><p>ISR anual con la tabla del Art. 113-F, menos pagos y retenciones: llegas a abril sabiendo el resultado.</p></div>
+    <div class="card feat"><h3>Excel o Google Sheets</h3><p>Funciona en Excel y en Google Sheets. Sin macros, sin suscripción, sin instalar nada.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec">Tabla de tasas RESICO mensual 2026</h2>
+  <table>
+    <thead><tr><th>Ingresos cobrados del mes (MXN)</th><th>Tasa ISR</th></tr></thead>
+    <tbody>
+      <tr><td>Hasta $25,000.00</td><td>1.00%</td></tr>
+      <tr><td>$25,000.01 a $50,000.00</td><td>1.10%</td></tr>
+      <tr><td>$50,000.01 a $83,333.33</td><td>1.50%</td></tr>
+      <tr><td>$83,333.34 a $208,333.33</td><td>2.00%</td></tr>
+      <tr><td>Más de $208,333.33</td><td>2.50%</td></tr>
+    </tbody>
+  </table>
+  <p class="small">Fuente: Art. 113-E de la Ley del ISR; sin cambios para 2026. <a href="tabla-resico-2026.html">Ver tabla anual y ejemplos →</a></p>
+</section>
+
+<section id="precio">
+  <div class="card price">
+    <div>
+      <div class="small">Pago único · descarga inmediata</div>
+      <div class="amount" data-precio>$149 MXN</div>
+      <a class="btn btn-primary" data-link="compra" href="#">Comprar Control RESICO 2026</a>
+    </div>
+    <ul class="check">
+      <li>Archivo Control RESICO 2026 (.xlsx) con 6 hojas</li>
+      <li>Ingresos, gastos, resumen mensual y anual</li>
+      <li>Instrucciones paso a paso dentro del archivo</li>
+      <li>Calculadora mensual gratuita incluida</li>
+      <li>Garantía: si no te sirve, escríbenos en 14 días y te devolvemos tu dinero</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec">Preguntas frecuentes</h2>
+  <details><summary>¿Sustituye a mi contador o a la declaración del SAT?</summary><p>No. Es una herramienta de control y estimación. La declaración se presenta en el portal del SAT y, si tienes dudas, consulta a un contador.</p></details>
+  <details><summary>¿Sirve si me retienen impuestos las empresas?</summary><p>Sí. Al marcar a un cliente como persona moral se calcula la retención de ISR de 1.25% y, si lo indicas, la retención de IVA.</p></details>
+  <details><summary>¿Los gastos bajan mi ISR en RESICO?</summary><p>No. En RESICO el ISR se paga sobre ingresos cobrados sin deducciones. Los gastos con CFDI sí sirven para acreditar IVA, y el archivo lo calcula.</p></details>
+  <details><summary>¿Cómo lo recibo?</summary><p>Al completar el pago recibes el enlace de descarga en tu correo y en la página de confirmación.</p></details>
+</section>
+</main>
+
+<footer><div class="wrap">Herramienta de estimación; no constituye asesoría fiscal. Tasas según LISR Arts. 113-E y 113-F vigentes en 2026. · <a href="tabla-resico-2026.html">Tabla RESICO 2026</a></div></footer>
+
+<script src="config.js"></script>
+<script>
+(function(){
+  var cfg = window.FACTORY_CONFIG || {};
+  document.querySelectorAll('[data-precio]').forEach(function(el){ if(cfg.precio) el.textContent = cfg.precio; });
+  document.querySelectorAll('[data-link]').forEach(function(a){
+    var url = a.dataset.link === 'compra' ? cfg.linkCompra : cfg.linkGratis;
+    if (url) { a.href = url; a.target = '_blank'; a.rel = 'noopener'; }
+    else if (a.dataset.link === 'compra' && a.getAttribute('href') === '#') {
+      a.textContent = 'Próximamente'; a.setAttribute('aria-disabled','true');
+      a.addEventListener('click', function(e){ e.preventDefault(); });
+    }
+  });
+  var T = [[0.01,0.01],[25000.01,0.011],[50000.01,0.015],[83333.34,0.02],[208333.34,0.025]];
+  var fmt = new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN'});
+  function tasa(x){ var t=0; if(x<=0) return 0; T.forEach(function(r){ if(x>=r[0]) t=r[1]; }); return t; }
+  function calc(){
+    var ing = Math.max(0, parseFloat(document.getElementById('ing').value)||0);
+    var pm = Math.min(ing, Math.max(0, parseFloat(document.getElementById('pm').value)||0));
+    var t = tasa(ing), isr = Math.round(ing*t*100)/100, ret = Math.round(pm*0.0125*100)/100;
+    var pagar = Math.max(0, isr-ret);
+    document.getElementById('r-tasa').textContent = (t*100).toFixed(2)+'%';
+    document.getElementById('r-isr').textContent = fmt.format(isr);
+    document.getElementById('r-ret').textContent = '−'+fmt.format(ret);
+    document.getElementById('r-pagar').textContent = fmt.format(pagar);
+    document.getElementById('r-nota').textContent = ing > 3500000/12*1.0 ? 'Ojo: a este ritmo podrías superar el tope anual de $3,500,000.' :
+      (ret > isr ? 'Tus retenciones superan el ISR del mes; no pagas ISR este mes.' : 'Fecha límite: día 17 del mes siguiente.');
+  }
+  ['ing','pm'].forEach(function(id){ document.getElementById(id).addEventListener('input', calc); });
+  calc();
+})();
+</script>
+</body>
+</html>
